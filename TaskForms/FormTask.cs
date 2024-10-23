@@ -33,7 +33,6 @@ namespace TaskForms
                + "\n Percentage: " + comboBoxPercent.Text
                + "\n Send Email: " + checkBoxEmail.Checked;
 
-
             if (ValidarCampos())
             {
                 MessageBox.Show(message);
@@ -43,8 +42,8 @@ namespace TaskForms
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            FormPrincipal formPrincipalNueva = new FormPrincipal();
+            formPrincipalNueva.Show();
         }
 
         private bool ValidarCampos()
