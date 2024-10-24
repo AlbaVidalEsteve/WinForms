@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button buttonSubmit;
+            this.buttonSubmit = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelLocation = new System.Windows.Forms.Label();
             this.labelCriticity = new System.Windows.Forms.Label();
@@ -52,22 +52,21 @@
             this.comboBoxLocation = new System.Windows.Forms.ComboBox();
             this.checkedListBoxEnvironment = new System.Windows.Forms.CheckedListBox();
             this.buttonNew = new System.Windows.Forms.Button();
-            buttonSubmit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSubmit
             // 
-            buttonSubmit.BackColor = System.Drawing.SystemColors.HotTrack;
-            buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttonSubmit.ForeColor = System.Drawing.SystemColors.HighlightText;
-            buttonSubmit.Location = new System.Drawing.Point(666, 617);
-            buttonSubmit.Name = "buttonSubmit";
-            buttonSubmit.Size = new System.Drawing.Size(87, 41);
-            buttonSubmit.TabIndex = 27;
-            buttonSubmit.Text = "Submit";
-            buttonSubmit.UseVisualStyleBackColor = false;
-            buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            this.buttonSubmit.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSubmit.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonSubmit.Location = new System.Drawing.Point(666, 617);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(87, 41);
+            this.buttonSubmit.TabIndex = 27;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // labelTitle
             // 
@@ -230,6 +229,8 @@
             this.dateTimePickerStartDate.TabIndex = 22;
             this.dateTimePickerStartDate.UseWaitCursor = true;
             this.dateTimePickerStartDate.Value = new System.DateTime(2024, 10, 23, 10, 44, 45, 0);
+            this.dateTimePickerStartDate.ValueChanged += new System.EventHandler(this.dateTimePickerStartDate_ValueChanged);
+            this.dateTimePickerStartDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimePickerStartDate_KeyDown);
             // 
             // comboBoxStatus
             // 
@@ -328,7 +329,7 @@
             this.Controls.Add(this.checkedListBoxEnvironment);
             this.Controls.Add(this.comboBoxLocation);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(buttonSubmit);
+            this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.checkBoxEmail);
             this.Controls.Add(this.comboBoxPercent);
             this.Controls.Add(this.comboBoxStatus);
@@ -381,5 +382,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxEnvironment;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
+        private System.Windows.Forms.Button buttonSubmit;
     }
 }

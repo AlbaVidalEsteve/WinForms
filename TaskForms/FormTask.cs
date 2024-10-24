@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace TaskForms
 {
@@ -78,6 +79,21 @@ namespace TaskForms
                 }
             }
             return checks;
+        }        
+
+        private void dateTimePickerStartDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                dateTimePickerStartDate.CustomFormat = " ";
+                dateTimePickerStartDate.Format = DateTimePickerFormat.Custom;
+            }
+        }
+
+        private void dateTimePickerStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerStartDate.CustomFormat = "dd/MM/yyyy";
+            dateTimePickerStartDate.Format = DateTimePickerFormat.Short;
         }
     }
 }
